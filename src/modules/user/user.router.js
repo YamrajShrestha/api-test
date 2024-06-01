@@ -1,18 +1,7 @@
 const router = require("express").Router();
+const userCtrl = require("./user.controller");
 
-router.post("/create", (req, res, next) => {
-  res.json({
-    result: "To create request",
-    message: "success",
-    meta: null,
-  });
-});
-router.get("/list", (req, res, next) => {
-  res.json({
-    result: "To list request",
-    message: "success in listing",
-    meta: null,
-  });
-});
+router.post("/create", userCtrl.createUser);
+router.get("/list", userCtrl.listUser);
 
 module.exports = router;
