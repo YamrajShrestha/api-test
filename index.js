@@ -1,12 +1,9 @@
-const express = require("express");
-const userRouter = require("./src/modules/user/user.router");
+const http = require("http");
+const app = require("./src/config/express.config");
+const server = http.createServer(app);
 
-const app = express();
-const port = 3000
-
-app.use("/user", userRouter);
+const port = 3000;
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-  })
-  
+  console.log(`Example app listening on port ${port}`);
+});
