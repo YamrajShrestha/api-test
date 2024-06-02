@@ -1,8 +1,8 @@
 class UserController {
-    
   createUser = (req, res, next) => {
+    const data = req.body;
     res.json({
-      result: "To create using controller",
+      result: data,
       message: "success on controller",
       meta: null,
     });
